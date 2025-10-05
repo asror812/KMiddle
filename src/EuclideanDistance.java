@@ -1,7 +1,6 @@
 import java.util.List;
-import java.util.Map;
 
-public class EuclideanDistance  implements Distance{
+public class EuclideanDistance implements Distance {
     @Override
     public double calculate(List<Double> f1, List<Double> f2) {
         double sum = 0;

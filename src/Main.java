@@ -5,10 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-
 public class Main {
     private static final Scanner SCANNER_NUM = new Scanner(System.in);
-   // private static Scanner SCANNER_STR = new Scanner(System.in);
+    // private static Scanner SCANNER_STR = new Scanner(System.in);
     private static final GenericService genericService = new GenericService();
 
     public static void main(String[] args) {
@@ -32,7 +31,8 @@ public class Main {
                 genericService.read("volkiISobaki");
 
                 int m = getKValue("volkiISobaki");
-                if (m == 0) return;
+                if (m == 0)
+                    return;
 
                 EuclideanDistance distance = new EuclideanDistance();
                 Map<Centroid, List<Record>> fit = Service.fit(GenericService.list, m, distance, 1000);
@@ -57,11 +57,11 @@ public class Main {
                 genericService.read("iris");
 
                 int m = getKValue("iris");
-                if (m == 0) return;
+                if (m == 0)
+                    return;
 
                 EuclideanDistance distance = new EuclideanDistance();
                 Map<Centroid, List<Record>> fit = Service.fit(GenericService.list, m, distance, 100000000);
-
 
                 for (Map.Entry<Centroid, List<Record>> entry : fit.entrySet()) {
                     Centroid centroid = entry.getKey();
@@ -83,7 +83,8 @@ public class Main {
             } else if (option0 == 3) {
                 genericService.read("abc");
                 int m = getKValue("abc");
-                if (m == 0) return;
+                if (m == 0)
+                    return;
 
                 EuclideanDistance distance = new EuclideanDistance();
                 Map<Centroid, List<Record>> fit = Service.fit(GenericService.list, m, distance, 1000);
@@ -108,7 +109,8 @@ public class Main {
             } else if (option0 == 4) {
                 genericService.read("giper147");
                 int m = getKValue("giper147");
-                if (m == 0) return;
+                if (m == 0)
+                    return;
 
                 EuclideanDistance distance = new EuclideanDistance();
                 Map<Centroid, List<Record>> fit = Service.fit(GenericService.list, m, distance, 1000);
@@ -130,16 +132,15 @@ public class Main {
                     }
                     System.out.println("----------");
                 }
-            }
-            else if (option0 == 5) {
+            } else if (option0 == 5) {
                 genericService.read("test");
 
                 int m = getKValue("test");
-                if (m == 0) return;
+                if (m == 0)
+                    return;
 
                 EuclideanDistance distance = new EuclideanDistance();
                 Map<Centroid, List<Record>> fit = Service.fit(GenericService.list, m, distance, 100000000);
-
 
                 for (Map.Entry<Centroid, List<Record>> entry : fit.entrySet()) {
                     Centroid centroid = entry.getKey();
@@ -158,8 +159,8 @@ public class Main {
                     }
                     System.out.println("----------");
                 }
-            }
-            else k++;
+            } else
+                k++;
         }
 
     }
@@ -167,7 +168,7 @@ public class Main {
     private static int getKValue(String db) {
 
         int k = 0;
-        while(true) {
+        while (true) {
 
             if (k > 0) {
                 System.out.println("Invalid input");
@@ -175,14 +176,12 @@ public class Main {
 
             System.out.println("Напиши значение K");
 
-
             int k1 = SCANNER_NUM.nextInt();
 
-            if(k1 != 0){
+            if (k1 != 0) {
                 return k1;
             }
-            k++
-            ;
+            k++;
         }
     }
 
